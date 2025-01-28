@@ -68,11 +68,15 @@
 		</plugins>
 	</build>
 
-	<repositories>
+	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<url>https://maven.pkg.github.com/iCodeTechnology/sbglobalexceptionhandler</url>
 		</repository>
-	</repositories>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/iCodeTechnology/sbglobalexceptionhandler</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
