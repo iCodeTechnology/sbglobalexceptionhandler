@@ -179,5 +179,3 @@ iCode Technology
 - Property-based enable/disable
 - RFC 7807 (Problem Details) support
 - Logging & trace-id integration
-
----
