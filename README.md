@@ -181,7 +181,7 @@ GlobalExceptionAutoConfiguration matched
 ---
 
 ## 📄 License
-`MIT License` and `Apache-2` License.
+This project is licensed under the Apache License, Version 2.0.
 
 ---
 
