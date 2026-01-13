@@ -1,4 +1,4 @@
-# SB Global Exception Handler
+# Spring Boot Global Exception Handler
 
 A reusable Spring Boot library for centralized exception handling.  
 This library provides a common Global Exception Handler that can be used across multiple Spring Boot projects as a Maven dependency.
