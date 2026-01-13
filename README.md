@@ -182,7 +182,7 @@ GlobalExceptionAutoConfiguration matched
 ---
 
 ## 📄 License
-MIT License
+`MIT License` and `Apache-2` License.
 
 ---
 
