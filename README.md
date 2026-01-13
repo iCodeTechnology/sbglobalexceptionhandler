@@ -1,3 +1,5 @@
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 # Spring Boot Global Exception Handler
 
 A reusable Spring Boot library for centralized exception handling.  
