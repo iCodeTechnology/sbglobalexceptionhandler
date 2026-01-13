@@ -42,6 +42,23 @@ This library provides a common Global Exception Handler that can be used across 
 GlobalExceptionAutoConfiguration
 ```
 ---
+
+## Use Annotation in Main Application Class
+📌 Application.java
+
+```java
+@SpringBootApplication
+@EnableGlobalExceptionHandling
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+---
+
 ## 🧩 Supported Exceptions
 
 1️⃣ Validation Errors
