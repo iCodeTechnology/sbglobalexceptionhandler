@@ -1,6 +1,6 @@
-package com.icodetech.sbglobalexceptionhandler.core.annotation;
+package com.ajglobaltechnology.sbglobalexceptionhandler.core.annotation;
 
-import com.icodetech.sbglobalexceptionhandler.core.config.GlobalExceptionAutoConfiguration;
+import com.ajglobaltechnology.sbglobalexceptionhandler.core.config.GlobalExceptionAutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;

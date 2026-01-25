@@ -1,4 +1,4 @@
-package com.icodetech.sbglobalexceptionhandler.core.exception;
+package com.ajglobaltechnology.sbglobalexceptionhandler.core.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

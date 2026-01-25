@@ -1,8 +1,8 @@
-package com.icodetech.sbglobalexceptionhandler.core.exception.advice;
+package com.ajglobaltechnology.sbglobalexceptionhandler.core.exception.advice;
 
-import com.icodetech.sbglobalexceptionhandler.core.exception.ApiException;
-import com.icodetech.sbglobalexceptionhandler.core.exception.dto.response.ApiError;
-import com.icodetech.sbglobalexceptionhandler.core.exception.dto.response.ResponseEntityBuilder;
+import com.ajglobaltechnology.sbglobalexceptionhandler.core.exception.ApiException;
+import com.ajglobaltechnology.sbglobalexceptionhandler.core.exception.dto.response.ApiError;
+import com.ajglobaltechnology.sbglobalexceptionhandler.core.exception.dto.response.ResponseEntityBuilder;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -31,7 +31,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleHttpMediaTypeNotSupported : triggers when the JSON is invalid
     @Override
-    protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(HttpMediaTypeNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(HttpMediaTypeNotSupportedException ex,
+            HttpHeaders headers, org.springframework.http.HttpStatusCode status, WebRequest request) {
 
         Map<String, String> errors = new HashMap<>();
 
@@ -53,7 +54,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleHttpMessageNotReadable : triggers when the JSON is malformed
     @Override
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
+            HttpHeaders headers, org.springframework.http.HttpStatusCode status, WebRequest request) {
 
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getMessage());
@@ -69,7 +71,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleMethodArgumentNotValid : triggers when @Valid fails
     @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+            HttpHeaders headers, org.springframework.http.HttpStatusCode status, WebRequest request) {
         List<Map<String, String>> errorList = new ArrayList<>();
 
         ex.getBindingResult().getAllErrors().forEach((error) -> {
@@ -90,9 +93,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntityBuilder.build(apiError);
     }
 
-    // handleMissingServletRequestParameter : triggers when there are missing parameters
+    // handleMissingServletRequestParameter : triggers when there are missing
+    // parameters
     @Override
-    protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
+            HttpHeaders headers, org.springframework.http.HttpStatusCode status, WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getParameterName() + " parameter is missing");
 
@@ -107,9 +112,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleNoHandlerFoundException : triggers when the handler method is invalid
     @Override
-    protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers,
+            org.springframework.http.HttpStatusCode status, WebRequest request) {
         Map<String, String> errors = new HashMap<>();
-        errors.put("message", String.format("Could not find the %s method for URL %s", ex.getHttpMethod(), ex.getRequestURL()));
+        errors.put("message",
+                String.format("Could not find the %s method for URL %s", ex.getHttpMethod(), ex.getRequestURL()));
 
         ApiError<Map<String, String>> apiError = new ApiError<>();
         apiError.setHttpStatus(HttpStatus.BAD_REQUEST);
@@ -122,7 +129,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleTypeMismatch : triggers when a parameter's type does not match
     @Override
-    protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers,
+            org.springframework.http.HttpStatusCode status, WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getMessage());
 
@@ -137,7 +145,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handleMissingPathVariable : triggers when missing path variable.
     @Override
-    protected ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleMissingPathVariable(MissingPathVariableException ex, HttpHeaders headers,
+            org.springframework.http.HttpStatusCode status, WebRequest request) {
 
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getMessage());
@@ -151,10 +160,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntityBuilder.build(apiError);
     }
 
-    // handleMethodArgumentTypeMismatch : triggers when a parameter's type does not match
+    // handleMethodArgumentTypeMismatch : triggers when a parameter's type does not
+    // match
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     protected ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex,
-                                                                      WebRequest request) {
+            WebRequest request) {
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getMessage());
 
@@ -168,7 +178,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     }
 
-    // handleSQLIntegrityConstraintViolationException : triggers when @Validated fails
+    // handleSQLIntegrityConstraintViolationException : triggers when @Validated
+    // fails
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<?> handleSQLIntegrityConstraintViolationException(Exception ex, WebRequest request) {
 
@@ -186,7 +197,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     // handleAllException : triggers when there is any Exception
-    @ExceptionHandler({ Exception.class, RuntimeException.class, Error.class})
+    @ExceptionHandler({ Exception.class, RuntimeException.class, Error.class })
     public ResponseEntity<Object> handleAllException(Exception ex, WebRequest request) {
 
         Map<String, String> errors = new HashMap<>();

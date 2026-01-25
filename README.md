@@ -29,9 +29,9 @@ This library provides a common Global Exception Handler that can be used across 
 
 ```xml
 <dependency>
-    <groupId>com.icodetech</groupId>
-    <artifactId>sbglobalexceptionhandler</artifactId>
-    <version>1.0</version>
+    <groupId>com.ajglobaltechnology</groupId>
+    <artifactId>sb-global-exception-handler</artifactId>
+    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -174,8 +174,8 @@ GlobalExceptionAutoConfiguration matched
 
 ## 🛠️ Tech Stack
 
-- Java 8+
-- Spring Boot 2.7.x
+- Java 17+
+- Spring Boot 3.4.x
 - Maven
 
 ---
@@ -187,7 +187,7 @@ This project is licensed under the Apache License, Version 2.0.
 
 ## 👨‍💻 Author
 
-iCode Technology
+AJ Global Technology
 
 ---
 

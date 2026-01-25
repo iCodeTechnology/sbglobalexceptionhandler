@@ -1,4 +1,4 @@
-package com.icodetech.sbglobalexceptionhandler.core.exception.dto.response;
+package com.ajglobaltechnology.sbglobalexceptionhandler.core.exception.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

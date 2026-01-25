@@ -1,4 +1,4 @@
-package com.icodetech.sbglobalexceptionhandler.core.exception;
+package com.ajglobaltechnology.sbglobalexceptionhandler.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
