@@ -40,6 +40,13 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -59,7 +66,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/iCodeTechnology/sbglobalexceptionhandler</url>
+            <url>https://maven.pkg.github.com/AJGlobal-Technology/sb-global-exception-handler</url>
         </repository>
     </distributionManagement>
 
